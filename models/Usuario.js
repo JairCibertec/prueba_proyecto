@@ -16,11 +16,11 @@ export const Usuario = sequelize.define('usuario', {
         allowNull: false
     },
     fec_nacimiento: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
         allowNull: false
     },
     dni: {
-        type: DataTypes.STRING,
+        type: DataTypes.CHAR(8),
         allowNull: false
     },
     email: {
@@ -32,17 +32,17 @@ export const Usuario = sequelize.define('usuario', {
         allowNull: false
     },
     tipo: {
-        type: DataTypes.CHAR,
+        type: DataTypes.CHAR(1),
         defaultValue: 0,
         allowNull: false
     },
     tarifa_hora: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.DOUBLE,
         defaultValue: 0.0,
         allowNull: false
     },
     actividad_usuario: {
-        type: DataTypes.CHAR,
+        type: DataTypes.CHAR(1),
         defaultValue: 0,
         allowNull: false
     },
@@ -58,5 +58,5 @@ export const Usuario = sequelize.define('usuario', {
     }
 }, {
     freezeTableName: true,
-    timestamps: false
+    timestamps: true
 })

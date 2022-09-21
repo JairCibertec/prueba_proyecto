@@ -7,38 +7,6 @@ export const Actividad = sequelize.define('actividad', {
         primaryKey: true,
         autoIncrement: true
     },
-    dia: {
-        type: DataTypes.DATE,
-        allowNull: false
-    },
-    hora_ingreso: {
-        type: DataTypes.TIME,
-        defaultValue: undefined,
-        allowNull: false
-    },
-    hora_salida: {
-        type: DataTypes.TIME,
-        defaultValue: undefined,
-        allowNull: false
-    },
-    fec_inicio: {
-        type: DataTypes.DATE,
-        allowNull: false
-    },
-    fec_fin: {
-        type: DataTypes.DATE,
-        allowNull: false
-    },
-    hora_ing_reg: {
-        type: DataTypes.TIME,
-        defaultValue: undefined,
-        allowNull: false
-    },
-    hora_sal_reg: {
-        type: DataTypes.TIME,
-        defaultValue: undefined,
-        allowNull: false
-    },
     idUsuario: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -49,15 +17,25 @@ export const Actividad = sequelize.define('actividad', {
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
     },
-    idEstado: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'Estado',
-            key: 'idEstado'
-        },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE'
+    dia: {
+        type: DataTypes.DATEONLY,
+        allowNull: false
+    },
+    ingreso_actividad: {
+        type: DataTypes.TIME,
+        allowNull: false
+    },
+    salida_actividad: {
+        type: DataTypes.TIME,
+        allowNull: false
+    },
+    inicio_actividad: {
+        type: DataTypes.DATEONLY,
+        allowNull: false
+    },
+    fin_actividad: {
+        type: DataTypes.DATEONLY,
+        allowNull: false
     }
 }, {
     freezeTableName: true,
