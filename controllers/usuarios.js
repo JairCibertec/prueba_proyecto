@@ -1,8 +1,6 @@
 import { response } from "express"
 import { Area } from "../models/Area.js";
 import { Usuario } from "../models/Usuario.js"
-import { Estado } from "../models/Estado.js"
-import { Feriado } from "../models/Feriado.js";
 
 export const obtenerUsuarios = async (req, res = response) => {
 

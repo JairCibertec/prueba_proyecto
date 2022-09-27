@@ -20,6 +20,10 @@ export const Horario_Asistencia = sequelize.define('horario_asistencia', {
     idUsuario: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        references: {
+            model: 'Actividad',
+            key: 'idUsuario'
+        },
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
     },
